@@ -22,7 +22,12 @@ const app = express();
 // CORS configuration
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3000'],
+    origin: [
+      'http://localhost:5173',
+      'http://127.0.0.1:5173',
+      'http://localhost:3000',
+      'https://ai-interview-preparation-assistant-six.vercel.app',
+    ],
     credentials: true,
   })
 );
@@ -56,5 +61,5 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`[InterviewMate Backend] Running on http://localhost:${PORT}`);
+  console.log(`[InterviewMate Backend] Running on port ${PORT}`);
 });
